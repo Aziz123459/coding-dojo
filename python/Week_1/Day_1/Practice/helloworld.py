@@ -15,7 +15,7 @@ print("hello "+ str(num))
 #4a
 food1="bread"
 food2="pizza"
-print("i love to eat",food1,"and",food2)
+print("i love to eat {} and {}".format(food1 , food2))
 #4b
 food1="bread"
 food2="pizza"
