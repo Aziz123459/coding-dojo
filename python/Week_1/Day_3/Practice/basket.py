@@ -5,7 +5,9 @@ class Player:
         self.age = players_info['age']
         self.position = players_info['position']
         self.team = players_info['team']
-    
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}, Position: {self.position}, Team: {self.team}")
+        return self
 
 
 
@@ -71,18 +73,15 @@ players = [
         "team": "Chicago Bulls"
     }
 ]
+#3 instances of the Player class using the given dictionaries
+player_kevin = Player(kevin)
+player_jason = Player(jason)
+player_kyrie = Player(kyrie)
 
 
 
-
-instance_kevin=Player(kevin)
-print(instance_kevin)
-instance_jason=Player(jason)
-print(instance_kevin)
-instance_kyrie=Player(kyrie)
-print(instance_kevin)
-
-
+new_team = []
 for i in players: 
     player_inf = Player(i)
-    print(player_inf.name)
+    new_team.append(player_inf.display_info())
+    print("*"*100)
