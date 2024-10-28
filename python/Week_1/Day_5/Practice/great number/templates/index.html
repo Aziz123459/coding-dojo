@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the great number game</h2>
+        <p>im thinking of a number between 1 and 100 <br>take a guess</p>
+        <form action="/submit" method="POST">
+            <input type="text" name="number">
+            <button>submit</button>
+        </form>
+        {% if hint and hint=="Good job you got the right answer" : %}
+            <h3 style=" background-color: green;">{{hint}}</h3>
+        {% else %}
+            <h3 style="background-color: red;">{{hint}}</h3>
+        {% endif %}
+        <a href="/reset"><button>Reset</button></a>
+    </div>
+</body>
+</html>
