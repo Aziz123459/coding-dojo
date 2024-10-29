@@ -1,0 +1,7 @@
+SELECT * FROM names;
+INSERT INTO names (full_name) VALUES('Mohamed Aziz Tounsi');
+INSERT INTO names (full_name) VALUES('ali ben salah'),('Yassin Ben abdallah');
+SELECT * FROM names;
+DELETE FROM names WHERE id=1;
+UPDATE names SET full_name=('helmi hamraoui') WHERE id=2;
+SELECT * FROM names;
