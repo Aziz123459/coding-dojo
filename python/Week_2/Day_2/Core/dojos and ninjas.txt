@@ -1,0 +1,13 @@
+INSERT INTO dojos(full_name) VALUES ('Mohamed Aziz TOUNSI'),('yassine ben abdallah'),('helmi hamraoui');
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+SET SQL_SAFE_UPDATES = 1;
+INSERT INTO dojos(full_name) VALUES ('coding dojoI'),('rbk'),('go my code');
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) VALUES('farouk','ben ali',24,4),('Mohamed Aziz',' TOUNSI',19,4),('helmi','hamraoui',14,4);
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) VALUES('Mohamed','ben hmida',20,5),('ahmed',' ben ahmed',49,5),('mokhtar','hamrouni',64,5);
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) VALUES('aziz','barguewi',25,6),('ahmed',' gharbi',19,6),('samir','hamra',44,6);
+SELECT * FROM ninjas WHERE dojo_id=4;
+SELECT * FROM ninjas WHERE dojo_id=6;
+SELECT * FROM ninjas order by id  desc limit 1 ;
+SELECT * FROM ninjas JOIN dojos ON dojos.id = ninjas.dojo_id WHERE ninjas.id = 6;
+SELECT * FROM ninjas JOIN dojos ON dojos.id = ninjas.dojo_id ;
