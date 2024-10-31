@@ -20,4 +20,4 @@ class User:
         query +="VALUES (%(first_name)s,%(last_name)s,%(email)s);"
         result=connectToMySQL("users_schema").query_db(query,data)
         print(result)
- 
+    
