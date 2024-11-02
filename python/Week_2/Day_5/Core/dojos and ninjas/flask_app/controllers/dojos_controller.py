@@ -4,17 +4,17 @@ from flask_app.models.ninjas_model import Ninja
 from flask_app import app
 
 
-@app.route('/')
+@app.route('/dojos')
 def get_dojos():
     list_dojos=Dojo.get_all()
     return render_template("dojos_form.html",list_dojos=list_dojos)
-@app.route('/dojos',methods=["POST"])
+@app.route('/',methods=["POST"])
 def creat():
     new_dojo={
         "name":request.form["name"]
     }
     result=Dojo.creat(new_dojo)
-    return redirect('/')
+    return redirect('/dojos')
 @app.route('/ninja')
 def ninja():
     list_dojos=Dojo.get_all()

@@ -7,25 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="row">
+    <div class="d-flex   justify-content-center gap-3 mt-3 ">
+        <div>
 
-        <form action="/dojos" method="POST">
-            <h1>new dojo</h1>
-            <div class="row">
-                <label for="name" class="">name:</label>
-                <input type="text" name="name">
-            </div>
-                <button>create</button>
-            
-        </form>
+            <form action="/dojos" method="POST">
+                <h1>new dojo</h1>
+                <div class="row mb-3">
+                    <label for="name" class="">name:</label>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" name="name">
+                </div>
+                    <button class=" btn btn-success mt-3">create</button>
+                
+            </form>
+        </div>
+        <div>
+            <ul class="list-group ">
+                {%for dojos in list_dojos %} 
+                <li class="list-group-item "><a href="/dojos/{{dojos.id}}">{{dojos.name}}</a></li>
+                {% endfor%}
+            </ul>
+        </div>
+        <a href="/ninja">add ninja</a>
     </div>
-    <div class="row">
-        <ul>
-            {%for dojos in list_dojos %} 
-            <li><a href="/dojos/{{dojos.id}}">{{dojos.name}}</a></li>
-            {% endfor%}
-        </ul>
-    </div>
-    <a href="/ninja">add ninja</a>
 </body>
 </html>
