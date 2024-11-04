@@ -17,7 +17,7 @@ class MySQLConnection:
     def query_db(self, query:str, data:dict=None):
         with self.connection.cursor() as cursor:
             try:
-                query = cursor.mogrify(query, data)
+                query = cursor.mogrify(query, data)#security purpose: prevent sql injection
                 print("Running Query:", query)
      
                 cursor.execute(query)
@@ -42,4 +42,3 @@ class MySQLConnection:
 # connectToMySQL receives the database we're using and uses it to create an instance of MySQLConnection
 def connectToMySQL(db):
     return MySQLConnection(db)
-

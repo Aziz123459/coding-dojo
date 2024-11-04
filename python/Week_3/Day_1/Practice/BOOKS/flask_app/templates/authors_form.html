@@ -7,29 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="d-flex   justify-content-center gap-3 mt-3 ">
+    <div class="d-flex   justify-content-center gap-5 mt-3 ">
         <div>
 
             <form action="/" method="POST">
-                <h1>new dojo</h1>
+                <h1>add author</h1>
                 <div class="row mb-3">
-                    <label for="name" class="">name:</label>
+                    <label for="full_name" class="">full_name:</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="text" name="name">
+                    <input type="text" name="full_name">
                 </div>
                     <button class=" btn btn-success mt-3">create</button>
                 
             </form>
         </div>
         <div>
-            <ul class="list-group ">
-                {%for dojos in list_dojos %} 
-                <li class="list-group-item "><a href="/dojos/{{dojos.id}}">{{dojos.name}}</a></li>
-                {% endfor%}
+                <h1>ALL AUTHORS</h1>
+            
+            <ul class="list-group" >
+                {%for author in list_authors%}
+                <li class="list-group-item "><a href="/autrhors/{{author.id}}">{{author.full_name}}</a></li>
+                {%endfor%}
             </ul>
         </div>
-        <a href="/ninja">add ninja</a>
     </div>
+    <a href="/books">add book</a>
 </body>
 </html>

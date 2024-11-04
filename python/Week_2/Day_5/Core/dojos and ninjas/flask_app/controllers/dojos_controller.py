@@ -16,7 +16,7 @@ def creat():
         "name":request.form["name"]
     }
     result=Dojo.creat(new_dojo)
-    return redirect('/dojos')
+    return redirect('/')
 @app.route('/ninja')
 def ninja():
     list_dojos=Dojo.get_all()
