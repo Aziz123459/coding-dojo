@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="">
+        <h1>Dojo Survey</h1>
+        {% with messages = get_flashed_messages() %}     
+            {% if messages %}                            
+                {% for message in messages %}            
+                    <p>{{message}}</p>                   
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/submit" method="POST" >
+            <label for="name">Your Name</label>
+            <input type="text" name="name">
+            <label for="location">Dojo location</label>
+            <select name="location" >
+                <option value="tunisia">tunisia</option>
+                <option value="egypt">egypt</option>
+                <option value="algeria">algeria</option>
+            </select>
+            <label for="language">languges</label>
+            <select name="language">
+                <option value="python">python</option>
+                <option value="js">js</option>
+                <option value="html">html</option>
+            </select>
+            <label for="comment">comment</label>
+            <textarea name="comment" ></textarea>
+            <button>Button</button>
+        </form>
+    </div>
+</body>
+</html>
