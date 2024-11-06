@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+</head>
+<body>
+    <div>
+        <h1>Email Addresses Entered:</h1>
+        {% for data in list_of_emails: %}
+            <div>
+                <p>{{data.email}} &nbsp; {{data.created_at}} &nbsp; <a href="/delete/{{data.id}}">Delete</a></p>
+            </div>
+        {% endfor %}
+        <a href="/">Add Email</a>
+    </div>
+</body>
+</html>
