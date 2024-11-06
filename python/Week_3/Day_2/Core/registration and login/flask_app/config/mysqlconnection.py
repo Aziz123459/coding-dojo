@@ -17,7 +17,7 @@ class MySQLConnection:
     def query_db(self, query:str, data:dict=None):
         with self.connection.cursor() as cursor:
             try:
-                query = cursor.mogrify(query, data)#security purpose: prevent sql injection
+                query = cursor.mogrify(query, data)
                 print("Running Query:", query)
      
                 cursor.execute(query)
